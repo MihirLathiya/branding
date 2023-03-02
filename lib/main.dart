@@ -1,8 +1,9 @@
 import 'package:branding/constant/color.dart';
-import 'package:branding/view/Branding_Data/data_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
+import 'view/Branding_Data/show_data_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
                 primarySwatch: Colors.blue,
                 scaffoldBackgroundColor: AppColor.white,
                 appBarTheme: AppBarTheme(color: AppColor.offWhite)),
-            home: DataForm());
+            home: ShowDataScreen());
       },
     );
   }

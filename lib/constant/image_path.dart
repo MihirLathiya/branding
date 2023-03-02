@@ -8,6 +8,8 @@ class ImagePath {
   static const String download = "asset/icon/ic-download.png";
   static const String edit = "asset/icon/ic-edit.png";
   static const String home = "asset/icon/ic-Home.png";
+  static const String plus = "asset/icon/ic-Plus.png";
 
   /// image
+  static const String noData = "asset/icon/No Data Vector.png";
 }
