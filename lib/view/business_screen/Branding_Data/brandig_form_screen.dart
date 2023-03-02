@@ -4,16 +4,17 @@ import 'package:branding/constant/font_style.dart';
 import 'package:branding/constant/image_path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class DataForm extends StatefulWidget {
-  const DataForm({Key? key}) : super(key: key);
+class BrandingFormScreen extends StatefulWidget {
+  const BrandingFormScreen({Key? key}) : super(key: key);
 
   @override
-  State<DataForm> createState() => _DataFormState();
+  State<BrandingFormScreen> createState() => _BrandingFormScreenState();
 }
 
-class _DataFormState extends State<DataForm> {
+class _BrandingFormScreenState extends State<BrandingFormScreen> {
   /// Business
   TextEditingController bBrandNameController = TextEditingController();
   TextEditingController bContactNumberController = TextEditingController();
@@ -30,10 +31,17 @@ class _DataFormState extends State<DataForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Image.asset(
-          ImagePath.back,
-          height: 32.sp,
-          width: 32.sp,
+        leading: GestureDetector(
+          onTap: () {
+            Get.back();
+          },
+          child: Center(
+            child: SvgPicture.asset(
+              ImagePath.back,
+              height: 32.sp,
+              width: 32.sp,
+            ),
+          ),
         ),
         title: Text('Branding Data', style: FontTextStyle.kBlack20W600Poppins),
         centerTitle: true,
@@ -213,7 +221,10 @@ class _DataFormState extends State<DataForm> {
                     ),
                   ),
                 ),
-              )
+              ),
+              SizedBox(
+                height: 24.sp,
+              ),
             ],
           )
         ],
@@ -327,7 +338,10 @@ class _DataFormState extends State<DataForm> {
                     ),
                   ),
                 ),
-              )
+              ),
+              SizedBox(
+                height: 24.sp,
+              ),
             ],
           )
         ],
