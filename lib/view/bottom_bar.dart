@@ -18,26 +18,68 @@ class BottomBarScreen extends StatelessWidget {
             width: Get.width,
             color: AppColor.blackFull,
             padding: EdgeInsets.symmetric(horizontal: 22.sp),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Stack(
+              alignment: Alignment.center,
               children: [
-                ...List.generate(
-                  controller.menu.length,
-                  (index) {
-                    return GestureDetector(
-                      onTap: () {
-                        controller.updateBottomIndex(index);
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ...List.generate(
+                      controller.menu.length,
+                      (index) {
+                        return GestureDetector(
+                          onTap: () {
+                            controller.updateBottomIndex(index);
+                          },
+                          child: controller.selectBottomBar == index
+                              ? SvgPicture.asset(
+                                  controller.menu[index],
+                                  height: 32.sp,
+                                  width: 32.sp,
+                                  color: Colors.transparent,
+                                )
+                              : SvgPicture.asset(
+                                  controller.menu[index],
+                                  height: 32.sp,
+                                  width: 32.sp,
+                                ),
+                        );
                       },
-                      child: SvgPicture.asset(
-                        controller.menu[index],
-                        height:
-                            controller.selectBottomBar == index ? 40.sp : 32.sp,
-                        width:
-                            controller.selectBottomBar == index ? 40.sp : 32.sp,
-                      ),
-                    );
-                  },
-                )
+                    )
+                  ],
+                ),
+                Container(
+                  height: 80.sp,
+                  width: Get.width,
+                  color: Colors.black45,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ...List.generate(
+                      controller.menu.length,
+                      (index) {
+                        return GestureDetector(
+                          onTap: () {
+                            controller.updateBottomIndex(index);
+                          },
+                          child: controller.selectBottomBar == index
+                              ? SvgPicture.asset(
+                                  controller.menu[index],
+                                  height: 40.sp,
+                                  width: 40.sp,
+                                )
+                              : SvgPicture.asset(
+                                  controller.menu[index],
+                                  height: 40.sp,
+                                  width: 40.sp,
+                                  color: Colors.transparent,
+                                ),
+                        );
+                      },
+                    )
+                  ],
+                ),
               ],
             ),
           );

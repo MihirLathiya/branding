@@ -6,9 +6,11 @@ class ImagePath {
   static const String businessMenu = "asset/icon/ic-Business.svg";
   static const String categoriesMenu = "asset/icon/ic-categories.svg";
   static const downloadMenu = "asset/icon/ic-download.svg";
+  static const download = "asset/icon/ic-download1.svg";
   static const categoriesShadow = "asset/icon/shadow.png";
   static const floatingButton = "asset/icon/ic-Plus.svg";
   static const noData = "asset/icon/No Data Vector.svg";
+  static const options = "asset/image/options.png";
 
   /// image
 }

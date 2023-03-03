@@ -2,6 +2,7 @@ import 'package:branding/constant/color.dart';
 import 'package:branding/constant/font_style.dart';
 import 'package:branding/constant/image_path.dart';
 import 'package:branding/controller/home_controller.dart';
+import 'package:branding/view/business_screen/edit_post_screen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -49,28 +50,36 @@ class ViewMoreScreen extends StatelessWidget {
           return Stack(
             alignment: Alignment.bottomCenter,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15.sp),
-                child: CachedNetworkImage(
-                  height: 189.sp,
-                  width: 189.sp,
-                  imageUrl:
-                      '${homeController.upcomingEventList[index]['image']}',
-                  fit: BoxFit.cover,
-                  errorWidget: (context, url, error) => Padding(
-                    padding: EdgeInsets.all(15.0),
-                    child: Icon(Icons.error_outline),
+              GestureDetector(
+                onTap: () {
+                  Get.to(() => EditPostScreen(
+                        imageLink:
+                            '${homeController.upcomingEventList[index]['image']}',
+                      ));
+                },
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15.sp),
+                  child: CachedNetworkImage(
+                    height: 189.sp,
+                    width: 189.sp,
+                    imageUrl:
+                        '${homeController.upcomingEventList[index]['image']}',
+                    fit: BoxFit.cover,
+                    errorWidget: (context, url, error) => Padding(
+                      padding: EdgeInsets.all(15.0),
+                      child: Icon(Icons.error_outline),
+                    ),
+                    progressIndicatorBuilder: (context, url, downloadProgress) {
+                      return Shimmer.fromColors(
+                        baseColor: Colors.grey.withOpacity(0.4),
+                        highlightColor: Colors.grey.withOpacity(0.2),
+                        enabled: true,
+                        child: Container(
+                          color: Colors.white,
+                        ),
+                      );
+                    },
                   ),
-                  progressIndicatorBuilder: (context, url, downloadProgress) {
-                    return Shimmer.fromColors(
-                      baseColor: Colors.grey.withOpacity(0.4),
-                      highlightColor: Colors.grey.withOpacity(0.2),
-                      enabled: true,
-                      child: Container(
-                        color: Colors.white,
-                      ),
-                    );
-                  },
                 ),
               ),
               Container(
