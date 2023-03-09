@@ -1,9 +1,8 @@
 import 'package:branding/constant/image_path.dart';
-import 'package:branding/view/business_screen/business_screen.dart';
+import 'package:branding/view/business_screen/show_data_screen.dart';
 import 'package:branding/view/categories_screen/categories_screen.dart';
 import 'package:branding/view/download_screen/download_screen.dart';
 import 'package:branding/view/home/home_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class BottomBarController extends GetxController {
@@ -17,7 +16,7 @@ class BottomBarController extends GetxController {
 
   List appScreen = [
     HomeScreen(),
-    BusinessScreen(),
+    ShowDataScreen(),
     CategoriesScreen(),
     DownloadScreen(),
   ];

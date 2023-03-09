@@ -16,6 +16,8 @@ class ImagePath {
   static const frame3 = "asset/image/frame3.png";
   static const frame4 = "asset/image/frame4.png";
   static const frame5 = "asset/image/frame5.png";
+  static const edit = "asset/icon/ic-edit.svg";
+  static const filter = "asset/icon/ic-filter.svg";
 
   /// image
 }
