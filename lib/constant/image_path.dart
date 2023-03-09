@@ -11,6 +11,11 @@ class ImagePath {
   static const floatingButton = "asset/icon/ic-Plus.svg";
   static const noData = "asset/icon/No Data Vector.svg";
   static const options = "asset/image/options.png";
+  static const frame1 = "asset/image/frame1.png";
+  static const frame2 = "asset/image/frame2.png";
+  static const frame3 = "asset/image/frame3.png";
+  static const frame4 = "asset/image/frame4.png";
+  static const frame5 = "asset/image/frame5.png";
 
   /// image
 }

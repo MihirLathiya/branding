@@ -1,7 +1,11 @@
+import 'package:branding/constant/image_path.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:screenshot/screenshot.dart';
 
 class EditPostController extends GetxController {
+  ScreenshotController screenshotController = ScreenshotController();
+
   /// FOR TAB BAR
   List<String> editType = [
     'Frame',
@@ -11,11 +15,30 @@ class EditPostController extends GetxController {
     'Stokes'
   ];
 
+  /// FOR POSITION
+  List<String> positionList = [
+    'Top-Left',
+    'Top-Center',
+    'Top-Right',
+    'Down-Left',
+    'Down-Center',
+    'Down-Right',
+  ];
+
+  /// FRAME LIST
+  List<String> frameList = [
+    ImagePath.frame1,
+    ImagePath.frame2,
+    ImagePath.frame3,
+    ImagePath.frame4,
+    ImagePath.frame5
+  ];
+
   /// FOR TAB BAR
   int selectType = 0;
 
   /// FOR SELECT FRAME
-  int selectFrame = 0;
+  int selectFrame = -1;
 
   /// FOR SELECT GRAPHIC
   int selectGraphic = 0;
